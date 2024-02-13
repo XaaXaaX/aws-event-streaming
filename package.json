@@ -1,0 +1,37 @@
+{
+  "name": "aws-event-streaming",
+  "version": "1.0.0",
+  "bin": {
+    "app": "bin/app.js"
+  },
+  "scripts": {
+    "build": "tsc && node esbuild.config.js",
+    "watch": "tsc -w",
+    "test": "jest",
+    "kinesis": "cdk --profile serverless --app 'npx ts-node --prefer-ts-exts cdk/kinesis-streaming/bin/app.ts'",
+    "cdk:kinesis": "npm run cdk:kinesis",
+    "sns": "cdk --profile serverless --app 'npx ts-node --prefer-ts-exts cdk/sns-broadcasting/bin/app.ts'",
+    "cdk:sns": "npm run sns",
+    "eventbridge": "cdk --profile serverless --app 'npx ts-node --prefer-ts-exts cdk/event-bus-broadcasting/bin/app.ts'",
+    "cdk:eventbridge": "npm run cdk:eventbridge"
+  },
+  "devDependencies": {
+    "@aws-sdk/client-dynamodb": "^3.474.0",
+    "@aws-sdk/client-sfn": "^3.485.0",
+    "@aws-sdk/util-dynamodb": "^3.485.0",
+    "@types/aws-lambda": "^8.10.125",
+    "@types/jest": "^29.5.5",
+    "@types/node": "^20.7.1",
+    "aws-cdk": "^2.118.0",
+    "aws-cdk-lib": "^2.118.0",
+    "constructs": "^10.3.0",
+    "esbuild": "^0.19.5",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.1.1",
+    "ts-node": "^10.9.1",
+    "typescript": "~5.2.2"
+  },
+  "dependencies": {
+    "source-map-support": "^0.5.21"
+  }
+}
